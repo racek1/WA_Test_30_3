@@ -76,8 +76,20 @@
     if (window.localStorage.getItem("dislikedJokesAmount") == null) { window.localStorage.setItem("dislikedJokesAmount", 0); }
     let data;
     let retries = 0;
-    $("likeButton").click(function () {
+    $("#likeButton").click(function () {
         $('#likeButton').animate({ 'zoom': 0.5 }, 400).delay(100).animate({ 'zoom': 1 }, 400);
+    });
+    $("#dislikeButton").click(function () {
+        $('#dislikeButton').animate({ 'zoom': 0.5 }, 400).delay(100).animate({ 'zoom': 1 }, 400);
+    });
+    $("#generateButton").click(function () {
+        $('#generateButton').animate({ 'zoom': 0.5 }, 400).delay(100).animate({ 'zoom': 1 }, 400);
+    });
+    $("#listLikedButton").click(function () {
+        $('#listLikedButton').animate({ 'zoom': 0.5 }, 400).delay(100).animate({ 'zoom': 1 }, 400);
+    });
+    $("#listDislikedButton").click(function () {
+        $('#listDislikedButton').animate({ 'zoom': 0.5 }, 400).delay(100).animate({ 'zoom': 1 }, 400);
     });
     GenerateNewJoke();
 
@@ -135,6 +147,7 @@
     }
 
     function Like() {
+   
         if (!isJokeLikedOrDisliked(data.joke)) {
             let likedJokesAmount = window.localStorage.getItem("likedJokesAmount");
             window.localStorage.setItem("likedJoke" + likedJokesAmount, data.joke);
